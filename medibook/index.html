@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediBook — Bright Smile Dental Clinic</title>
+  <meta name="description" content="MediBook — a modern clinic website with online appointment booking. Demo by Aakash Jain." />
+
+  <meta property="og:title" content="MediBook — Modern Clinic Booking Demo" />
+  <meta property="og:description" content="A clean clinic website with real online appointment booking." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a href="#top" class="nav__logo">🦷 Bright<span>Smile</span></a>
+    <nav class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#book" class="nav__cta">Book appointment</a>
+    </nav>
+    <a href="../" class="nav__demo">← Portfolio demo</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__text">
+        <p class="hero__eyebrow">✓ Accepting new patients</p>
+        <h1>Modern dental care, <span class="accent">made easy</span>.</h1>
+        <p class="hero__sub">
+          Gentle, expert dentistry in the heart of the city. Book your appointment online
+          in under a minute — no phone calls, no waiting on hold.
+        </p>
+        <div class="hero__actions">
+          <a href="#book" class="btn btn--primary">Book an appointment</a>
+          <a href="#services" class="btn btn--ghost">Our services</a>
+        </div>
+        <div class="hero__trust">
+          <div><strong>4.9★</strong><span>500+ reviews</span></div>
+          <div><strong>25+ yrs</strong><span>Experience</span></div>
+          <div><strong>Same-day</strong><span>Emergencies</span></div>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="hero__card-inner">
+          <span class="hero__card-badge">Online booking</span>
+          <h3>Your smile, our priority</h3>
+          <p>Friendly team · modern clinic · transparent pricing.</p>
+          <a href="#book" class="btn btn--primary btn--block">Find a time →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="section__head">
+        <h2>Our services</h2>
+        <p>Comprehensive dental care for the whole family.</p>
+      </div>
+      <div class="services">
+        <div class="service"><div class="service__ic">🦷</div><h3>Check-up & Clean</h3><p>Routine exams, scale & polish to keep your smile healthy.</p></div>
+        <div class="service"><div class="service__ic">✨</div><h3>Teeth Whitening</h3><p>Professional whitening for a brighter, confident smile.</p></div>
+        <div class="service"><div class="service__ic">🔧</div><h3>Fillings & Repairs</h3><p>Tooth-coloured fillings and same-day repairs.</p></div>
+        <div class="service"><div class="service__ic">😁</div><h3>Cosmetic Dentistry</h3><p>Veneers, alignment and smile makeovers.</p></div>
+        <div class="service"><div class="service__ic">🦷</div><h3>Implants</h3><p>Permanent, natural-looking tooth replacement.</p></div>
+        <div class="service"><div class="service__ic">🚑</div><h3>Emergency Care</h3><p>Same-day appointments for dental emergencies.</p></div>
+      </div>
+    </section>
+
+    <section id="why" class="section why">
+      <div class="why__text">
+        <h2>Why patients choose us</h2>
+        <ul>
+          <li><strong>Book online 24/7</strong> — reserve a slot whenever it suits you.</li>
+          <li><strong>Gentle, anxiety-free care</strong> — we go at your pace.</li>
+          <li><strong>Transparent pricing</strong> — no surprises, ever.</li>
+          <li><strong>Modern clinic</strong> — the latest, comfortable technology.</li>
+        </ul>
+      </div>
+      <div class="why__stat">
+        <div class="why__big">98%</div>
+        <p>of our patients would recommend us to friends and family.</p>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="book" class="section book">
+      <div class="section__head">
+        <h2>Book your appointment</h2>
+        <p>Pick a service, choose a time, and you're set. Takes less than a minute.</p>
+      </div>
+
+      <div class="booking">
+        <form id="bookingForm" class="booking__form">
+          <div class="steps" id="steps">
+            <span class="step active" data-step="1">1. Service</span>
+            <span class="step" data-step="2">2. Date & time</span>
+            <span class="step" data-step="3">3. Your details</span>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="bstep" data-step="1">
+            <label class="field">
+              <span>Which service do you need?</span>
+              <select id="service">
+                <option value="Check-up & Clean">Check-up & Clean (30 min)</option>
+                <option value="Teeth Whitening">Teeth Whitening (45 min)</option>
+                <option value="Fillings & Repairs">Fillings & Repairs (45 min)</option>
+                <option value="Cosmetic Consultation">Cosmetic Consultation (30 min)</option>
+                <option value="Implant Consultation">Implant Consultation (30 min)</option>
+                <option value="Emergency Appointment">Emergency Appointment (ASAP)</option>
+              </select>
+            </label>
+            <button type="button" class="btn btn--primary" data-next="2">Continue →</button>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bstep" data-step="2" hidden>
+            <label class="field">
+              <span>Choose a date</span>
+              <input type="date" id="date" />
+            </label>
+            <div class="field">
+              <span>Available times</span>
+              <div class="slots" id="slots"></div>
+            </div>
+            <div class="bstep__nav">
+              <button type="button" class="btn btn--ghost" data-back="1">← Back</button>
+              <button type="button" class="btn btn--primary" data-next="3" id="toStep3" disabled>Continue →</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bstep" data-step="3" hidden>
+            <label class="field"><span>Full name</span><input type="text" id="name" placeholder="Jane Smith" /></label>
+            <label class="field"><span>Email</span><input type="email" id="email" placeholder="jane@email.com" /></label>
+            <label class="field"><span>Phone</span><input type="tel" id="phone" placeholder="+1 555 123 4567" /></label>
+            <label class="field"><span>Notes (optional)</span><textarea id="notes" rows="2" placeholder="Anything we should know?"></textarea></label>
+            <div class="bstep__nav">
+              <button type="button" class="btn btn--ghost" data-back="2">← Back</button>
+              <button type="submit" class="btn btn--primary">Confirm booking ✓</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Summary / confirmation -->
+        <aside class="booking__summary" id="summary">
+          <h3>Your appointment</h3>
+          <div class="summary__row"><span>Service</span><strong id="sumService">—</strong></div>
+          <div class="summary__row"><span>Date</span><strong id="sumDate">—</strong></div>
+          <div class="summary__row"><span>Time</span><strong id="sumTime">—</strong></div>
+          <div class="summary__note">📍 Bright Smile Dental, 12 High Street · ☎ (555) 010-2030</div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Confirmation modal -->
+  <div class="modal" id="confirmModal">
+    <div class="modal__card">
+      <div class="modal__check">✓</div>
+      <h3>Appointment confirmed!</h3>
+      <p id="confirmText">We've booked your appointment.</p>
+      <p class="modal__sub">A confirmation has been sent to your email. (Demo — no real email is sent.)</p>
+      <button class="btn btn--primary" id="closeModal">Done</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>MediBook is a portfolio demo by <a href="../">Aakash Jain</a> — a fictional clinic showcasing an online booking flow. Built with vanilla JS.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
