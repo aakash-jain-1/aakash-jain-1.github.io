@@ -145,6 +145,7 @@ textarea { resize: vertical; }
   position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
   display: grid; place-items: center; z-index: 100; padding: 20px;
 }
+.modal[hidden] { display: none; }
 .modal__card {
   background: var(--card); border: 1px solid var(--border); border-radius: 16px;
   padding: 28px; max-width: 460px; width: 100%;
